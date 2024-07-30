@@ -1,7 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.SignalR;
 
 namespace backend.Hubs
@@ -11,7 +7,6 @@ namespace backend.Hubs
         private readonly IDictionary<string,UserRoomCoonection> _connection;
 
         public ChatHub(IDictionary<string,UserRoomCoonection> connection){
-            Console.WriteLine("Connection is "+connection);
             _connection = connection;
         }
         public async Task JoinRoom(UserRoomCoonection userRoomCoonection){

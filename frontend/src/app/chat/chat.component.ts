@@ -17,12 +17,14 @@ export class ChatComponent implements OnInit {
   messages:any[] = [];
   router = inject(Router)
   loggedInUserName = sessionStorage.getItem('user');
+  AllUsers :any[]=[];
 
   ngOnInit(): void {
     this.chatService.messages$.subscribe(res=>{
       this.messages=res;
-      console.log("logged in user are",this.loggedInUserName);
-      console.log("logged in user type",typeof this.loggedInUserName);
+    })
+    this.chatService.connectedUsers$.subscribe(res=>{
+      this.AllUsers=res;
     })
   }
 

@@ -11,8 +11,8 @@
             </div>
             <div class="connected-users">
                 <h4>Connected Users</h4>
-                <div class="user" *ngFor="let user of loggedInUserName; index as i" >
-                    <h5>{{i+1}} {{user}}</h5>
+                <div class="user" *ngFor="let user of AllUsers;" >
+                    <h5>{{user}}</h5>
                 </div>
             </div>
         </div>

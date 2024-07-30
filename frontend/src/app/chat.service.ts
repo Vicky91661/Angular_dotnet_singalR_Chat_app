@@ -22,16 +22,16 @@ export class ChatService {
         this.messages$.next(this.messages)
     })
     this.connection.on("ConnectedUser",(users:any)=>{
+      this.connectedUsers= users;
       this.connectedUsers$.next(users);
-      console.log("User:",users);
-     
+      console.log("User:",users[0]);
+      console.log("type of User:",typeof users);
     })
   }
 
   public async start(){
     try {
       this.connection.start();
-      console.log("Connection get Established");
     } catch (error) {
       console.log(error);
       setTimeout(()=>{
